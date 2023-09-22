@@ -1,0 +1,100 @@
+
+.dashboard-container{
+    background-color: transparent;
+    height: 100vh;
+    width: 100%;
+    margin: 50px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.dashboard-container .profile-left-section{
+    background-color: rgb(0, 132, 255);
+    margin: 3rem;
+    height: 60%;
+    width: 200px;
+    border-radius: 20px;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    padding-top: 100px;
+}
+.dashboard-container .profile-right-section{
+    background-color: transparent;
+    height: 100%;
+    width: 75%;
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.profile-left-section .buttonlist{
+    background-color: transparent;
+    margin-bottom: 10px;
+    width: 100%;
+    margin-left: 0;
+    height: 2rem;
+    border: none;
+    color:lightgray;
+    cursor: pointer;
+    
+    
+}
+.profile-left-section .buttonlist:hover{
+    color: white;
+}
+
+
+
+ .profile-header-section{
+    height: 75px;
+    width: 95%;
+    margin-top: 0;
+    margin-left: 2em;
+    background-color: transparent;
+    padding: .5rem;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid lightgrey;
+}
+.profile-header-section .profile-header-left{
+    height: 50px;
+    width: 50px;
+    background-color:transparent;
+    padding-top: .75rem;
+    font-size: 16px;
+}
+.profile-header-section .profile-header-right{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: transparent;
+
+}
+h6{
+    background-color: transparent;
+}
+.profile-header-right .profile-small-image{
+    height: 40px;
+    width: 40px;
+    background-color: black;
+    border-radius: 50%;
+}
+.profile-details{
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+.profile-details .basic-profile{
+    background-color: transparent;
+}
+.profile-details .profile-address{
+    background-color: transparent;
+}
+.line-horizontal
+ {
+  position: relative;
+  background-color: rgb(139, 136, 136); 
+}

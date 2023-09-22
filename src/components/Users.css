@@ -1,0 +1,20 @@
+.user-container{
+    background-color: white;
+    height: 600px;
+    width: 800px;
+    justify-content: space-around;
+    align-content: center;
+    padding: 50px;
+    margin-top: 10rem;
+    margin-left: 10rem;
+    margin-bottom: 10rem;
+    margin-bottom: 10rem;
+
+}
+.users{
+    background-color: rgb(182, 182, 192);
+    width: 400px;
+    height: 500px;
+    border-radius: 25px;
+    padding: 20px;
+    }
