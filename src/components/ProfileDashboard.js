@@ -6,14 +6,15 @@ import Gallery from './Gallery'
 import ToDO from './ToDO'
 
 
-const ProfileDashboard = () => {
+const ProfileDashboard = ({singleUser}) => {
 
   const[profile,setProfile]=useState(true);
+  const [profiledata,setProfileData]=useState(singleUser||[])
   const [post,setPost]=useState(false)
   const [gallery,setGallery]=useState(false)
   const [todo,setTodo]=useState(false)
 
-
+  console.log("singledata",singleUser)
 
    
   const handlePost=(e)=>{
