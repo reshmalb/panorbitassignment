@@ -14,7 +14,7 @@ const fetchUsers=  async()=>{
 
 }
 
-const Users = () => {
+const Users = ({onselect}) => {
   const[userlist,setUserList]=useState([]);
   const [singleUser,setSingleUser]=useState([])
 
@@ -39,17 +39,15 @@ const handleUserSelecttion=(id)=>{
   const userdata= userlist.filter((item)=>item.id===id)
   console.group("userdat",userdata)
   setSingleUser(userdata||[]);
+  onselect(userdata||[])
 
 }
 
   return (
-    <>
-    {singleUser.length===0?(<div className='user-container'>
+    <div className='users-container'>  
       <div className='user-heading'>
-         Select An Account  
-          
-
-         </div>
+         Select An Account          
+       </div>
         <div className='users'> 
         {userlist?.map((user)=>(
           <div className='user-list' key={user.id} onClick={(e)=>handleUserSelecttion(user.id)} >
@@ -63,11 +61,8 @@ const handleUserSelecttion=(id)=>{
             
         </div>
 
-      </div>):
-      (<ProfileDashboard  user={singleUser}/>)}
-    </>
+      </div>)
   
-  )
 }
 
 export default Users

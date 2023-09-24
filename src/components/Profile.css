@@ -1,0 +1,81 @@
+.individual-profile-details{
+    width: 80%;
+    height: 100%;
+    background-color: transparent;    
+    margin-left: 1rem;
+    margin-top: 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: yellow;
+
+}
+.basic-profile-details{
+    display: flex;
+    flex-direction: column;
+    padding: .5rem;
+    height: 100%;
+    width: 50%;
+    background-color: transparent;
+    
+    
+}
+.profile1{
+    display: flex;
+    flex-direction: column;
+    /* background-color: transparent; */
+}
+
+.profile1 .profile-pic-big{
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    margin-left: 4rem;
+}
+#name{
+    margin-left: 6rem;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom:5px ;
+    color: grey;
+
+}
+#company{
+    margin-left: 6rem;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom:5px ;
+    color: grey;
+}
+
+.profile-address{
+    
+}
+#address{
+    margin-left: 8em;
+    margin-top: 2em;
+    font-size: 16px;
+    font-weight: 500;
+    margin-bottom:5px ;
+
+}
+.user-labels{
+    margin-left: 3rem;
+    font-size: 20px;
+    font-weight: 500;
+    color: grey;
+    line-height: 20px;
+    margin-top: 4px;
+    line-height: 30px;
+}
+.span-user{
+    color: black;
+    font-size: 20px;
+
+}
+.line-horizontal{
+    margin: 1rem;
+    width: 70%;
+}
