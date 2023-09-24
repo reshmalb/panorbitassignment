@@ -8,32 +8,52 @@ const Profile = ({user}) => {
       <section className='basic-profile-details'>
          <div className='profile1'>
           <img className="profile-pic-big" src={user?user[0].profilepicture:"#"} alt='profilepic'></img>
-          <label id='name'>{user ? user[0].name:'NA'}</label>
-          <label className='user-labels'>Username:<span className='span-user'> {user ?user[0].username:'NA'}</span></label>
-          <label  className='user-labels'>E-mail:<span></span> <span></span><span className='span-user'> {user ? user[0].email:"NA"}</span></label>
-          <label  className='user-labels'>Phone: <span></span><span></span><span className='span-user'> {user ? user[0].phone:'NA'}</span></label>
-          <label  className='user-labels'>Website:<span></span><span></span><span></span><span></span><span className='span-user'> {user? user[0].website:'NA'}</span></label>
+          <div id='name'>{user ? user[0].name:'NA'}</div>
+          <div className='display-list'>
+          <div className='user-labels'>Username</div><div className='colon'>:</div><div className='span-user'> {user ?user[0].username:'NA'}</div>
+          </div>
+          <div className='display-list'>
+          <div  className='user-labels'>E-mail</div><div className='colon'>:</div><div className='span-user'> {user ? user[0].email:"NA"}</div>
+          </div>
+          <div className='display-list'>
+          <div  className='user-labels'>Phone</div><div className='colon'>:</div><div className='span-user'> {user ? user[0].phone:'NA'}</div>
+          </div>
+          <div className='display-list'>
+          <div  className='user-labels'>Website</div><div className='colon'>:</div><div className='span-user'> {user? user[0].website:'NA'}</div>
+          </div>        
          </div>
 
          <hr className='line-horizontal'></hr>
          <div className='profile1'>
-            <label id='company'> Company</label>
-            <label className='user-labels'>Name:<span className='span-user'> {user? user[0].company.name:'NA'}</span></label>
-            <label className='user-labels'>Catchphrase:<span className='span-user'> {user? user[0].company.catchPhrase:"NA"}</span></label>
-            <label className='user-labels'>bs:<span className='span-user'> {user? user[0].company.bs:"NA"}</span></label>
-
-
+            <div id='company'> Company</div>
+          <div className='display-list'>
+            <div className='user-labels'>Name</div><div className='colon'>:</div><div className='span-user'> {user? user[0].company.name:'NA'}</div>
+            </div>
+          <div className='display-list'>
+            <div className='user-labels'>Catchphrase</div ><div className='colon'>:</div><div className='span-user'> {user? user[0].company.catchPhrase:"NA"}</div>
+            </div>
+          <div className='display-list'>
+            <div className='user-labels'>bs</div><div className='colon'>:</div><div className='span-user'> {user? user[0].company.bs:"NA"}</div>
+            </div>
          </div>
 
       </section>
       <div className='line-vertical'>.</div>
       <section className='profile-address'>
             <div className='profile2'>
-            <label id='address'> Address:</label>
-            <label className='user-labels'>Street:<span className='span-user'> {user? user[0].address.street:'NA'}</span></label>
-            <label className='user-labels'>Suit:<span className='span-user'> {user? user[0].address.suite:"NA"}</span></label>
-            <label className='user-labels'>City:<span className='span-user'> {user? user[0].address.city:"NA"}</span></label>
-            <label className='user-labels'>Zipcode:<span className='span-user'> {user? user[0].address.zipcode:"NA"}</span></label>
+            <div id='address'> Address:</div>
+          <div className='display-list'>
+            <div className='user-labels'>Street</div><div className='colon'>:</div><div className='span-user'> {user? user[0].address.street:'NA'}</div>
+            </div>
+          <div className='display-list'>
+            <div className='user-labels'>Suit</div><div className='colon'>:</div><div className='span-user'> {user? user[0].address.suite:"NA"}</div>
+            </div>
+          <div className='display-list'>
+            <div className='user-labels'>City</div><div className='colon'>:</div><div className='span-user'> {user? user[0].address.city:"NA"}</div>
+            </div>
+             <div className='display-list'>
+            <div className='user-labels'>Zipcode</div><div className='colon'>:</div><div className='span-user'> {user? user[0].address.zipcode:"NA"}</div>
+            </div>
          </div>
          <div className='profile-map'>
 

@@ -11,10 +11,14 @@ function App() {
     setUserdata(user)
     setuser(true);
   }
+  const handlesignout=()=>{
+    setuser(false)
+    setUserdata([])
+  }
   return (
     <div className="App">
      {!isuser &&(<Users onselect={handleSelection}/>)}
-     {isuser &&( <ProfileDashboard user={userdata}/>)}  
+     {isuser &&( <ProfileDashboard user={userdata} signout={handlesignout}/>)}  
     </div>
   );
 }

@@ -4,12 +4,11 @@ import Profile  from './Profile'
 import Post from './Post'
 import Gallery from './Gallery'
 import ToDO from './ToDO'
-import Details from "./Details";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faGreaterThan } from '@fortawesome/free-solid-svg-icons';
+
+import Overlay from "./Overlay";
 
 
-const ProfileDashboard = ({user}) => {
+const ProfileDashboard = ({user,signout}) => {
 
   const[profile,setProfile]=useState(true);
   const [profiledata,setProfileData]=useState(user||[])
@@ -18,16 +17,7 @@ const ProfileDashboard = ({user}) => {
   const [todo,setTodo]=useState(false)
   const [activeButton, setActiveButton] = useState('profile'); 
   console.log("singledata",user,profiledata)
-  const [isModalOpen, setIsModalOpen] = useState(false);
-
-  const openModal = () => {
-    setIsModalOpen(true);
-  };
-
-  const closeModal = () => {
-    setIsModalOpen(false);
-  };
-
+  const [isOverlayOpen, setOverlayOpen] = useState(false);
    
   const handlePost=(e)=>{
     e.preventDefault();
@@ -66,10 +56,21 @@ const ProfileDashboard = ({user}) => {
 
 
   }
+  const handleSignout=()=>{
+    signout(true);
+  }
 
 
   return (
    <div className="dashboard-container">
+        <Overlay isOpen={isOverlayOpen} onClose={()=>setOverlayOpen(!isOverlayOpen)}>
+              <img className="overlay-image" src={user[0].profilepicture}/>
+               <div className="overlay-name">{user[0].name}</div>
+               <div className="overlay-email">{user[0].email}</div>
+               <button className="overlay-signout-button" onClick={handleSignout}>Signout</button>
+
+            </Overlay>
+
     <div className="profile-left-section">
     <div
         onClick={handleProfile}
@@ -115,10 +116,10 @@ const ProfileDashboard = ({user}) => {
                       {post &&('Posts')}
                       {gallery &&('Gallery')}
                     </div>
-                    <div className="profile-header-right">
-                        <img className="profile-small-image" src={user? user[0].profilepicture:'#'} onClick={openModal}>
+                    <div className="profile-header-right" >
+                        <img className="profile-small-image" src={user? user[0].profilepicture:'#'}  onClick={()=>setOverlayOpen(!isOverlayOpen)}>
                          </img>
-                         <div id='login-id'> {user[0].name}</div> 
+                         <div id='login-id' onClick={()=>setOverlayOpen(!isOverlayOpen)}> {user[0].name}</div> 
                     </div>                  
           </div>
          
@@ -130,11 +131,7 @@ const ProfileDashboard = ({user}) => {
              {gallery&&(<Gallery/>)}
         
             </div>
-            {isModalOpen && (<Details
-       name={user[0].name}
-        email={user[0].email} 
-        profilepic={user[0].profilepicture}
-         onClose={closeModal}/>)}
+       
       
           </div>
       

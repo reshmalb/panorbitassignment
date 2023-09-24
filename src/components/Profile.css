@@ -67,21 +67,27 @@
 
 }
 .user-labels{
-    margin-left: 3rem;
-    font-size: 20px;
-    font-weight: 500;
+    margin-left: 2rem;
+    width:8rem;
+    height: 2rem;
+    /* background-color: yellow; */
+    font-size: 18px;
     color: grey;
-    line-height: 20px;
     margin-top: 4px;
-    line-height: 30px;
     display: flex;
-    justify-content: space-between;
     align-items: center;
 }
 .span-user{
-    color: black;
-    font-size: 20px;
+    width: 10rem;
+    height: 2rem;
+    color: rgb(34, 33, 33);
+    font-size: 18px;
     margin-left: 10px; 
+    /* background-color: blue; */
+    margin-top: 4px;
+    display: flex;
+    align-items: center;
+
 
 }
 .line-horizontal{
@@ -89,6 +95,13 @@
     width: 80%;
     opacity: .3;
 
+}
+.colon{
+    height: 2rem;
+    width: 1rem;
+    color: black;
+    font-size: 16px;
+    margin-top: 11px;
 }
 .line-vertical{
     width: 2px;
@@ -109,4 +122,8 @@
     font-weight: 500;
     margin-left: 0;
     color: gray;
+}
+.display-list{
+    display: flex;
+    flex-direction: row;
 }

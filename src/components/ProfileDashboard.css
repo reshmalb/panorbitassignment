@@ -136,3 +136,37 @@ h6{
   width: 100%;
   background-color: rgb(139, 136, 136); 
 }
+.overlay-image{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    margin-left: 20%;
+}
+.overlay-name{
+    margin-left: 20%;
+    font-size: 20px;
+    opacity: .8;
+    margin-top: 1rem;
+
+}
+.overlay-email{
+    margin-left: 20%;
+    font-size: 16px;
+    opacity: .8;
+    margin-top: .5rem;
+    color: grey;
+
+}
+.overlay-signout-button{
+    margin-top: 4rem;
+    margin-left: 40%;
+    background-color: brown;
+    cursor: pointer;
+    border: none;
+    height: 2rem;
+    width: 4rem;
+    border-radius: 12px;
+    color: white;
+    font-style: bold;
+
+}
