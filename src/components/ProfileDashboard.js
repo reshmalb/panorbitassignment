@@ -77,14 +77,15 @@ const ProfileDashboard = ({user}) => {
       >
         Profile
       </div>
-      <hr></hr>
+      <hr className="hr-left"></hr>
       <div
         onClick={handlePost}
         className={`buttonlist ${activeButton === 'post' ? 'active' : ''}`}
       >
         Post
       </div>
-      <hr></hr>
+      <hr className="hr-left"></hr>
+
 
       <div
         onClick={handleGallery}
@@ -92,7 +93,8 @@ const ProfileDashboard = ({user}) => {
       >
         Gallery
       </div>
-      <hr></hr>
+      <hr className="hr-left"></hr>
+
 
       <div
         onClick={handleTodo}
@@ -108,12 +110,15 @@ const ProfileDashboard = ({user}) => {
         
            <div className="profile-header-section">
                     <div className="profile-header-left"> 
-                      Profile
+                      {profile &&('Profile')}
+                      {todo&& ('Todo')}
+                      {post &&('Posts')}
+                      {gallery &&('Gallery')}
                     </div>
                     <div className="profile-header-right">
-                       <img className="profile-small-image" src={user? user[0].profilepicture:'#'} onClick={openModal}>
+                        <img className="profile-small-image" src={user? user[0].profilepicture:'#'} onClick={openModal}>
                          </img>
-                          <h6>{user[0].name}</h6>
+                         <div id='login-id'> {user[0].name}</div> 
                     </div>                  
           </div>
          

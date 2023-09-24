@@ -10,9 +10,10 @@
 }
 .dashboard-container .profile-left-section{
     background-color: rgb(0, 132, 255);
-    margin: 1rem;
+    margin-top: 4rem;
+    margin-left: 2rem;
     height: 80%;
-    width: 300px;
+    width: 250px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -22,7 +23,7 @@
 .dashboard-container .profile-right-section{
     background-color: transparent;
     height: 100%;
-    width: 80%;
+    width: 70%;
     margin-right: 3rem;
     margin-top: 1rem;
     display: flex;
@@ -50,10 +51,11 @@
      
     
 }
-hr{
+.hr-left{
     margin-left: 2rem;
     margin-right: 2rem;
-    color: grey !important;;
+    color: grey !important;
+    opacity: .3;
 }
 .buttonlist.active {
     /* background-color: rgb(210, 210, 224);  */
@@ -74,7 +76,7 @@ hr{
 
  .profile-header-section{
     height: 75px;
-    width: 95%;
+    width:80%;
     margin-top: 0;
     margin-left: 2em;
     background-color: transparent;
@@ -89,14 +91,21 @@ hr{
     width: 50px;
     background-color:transparent;
     padding-top: .75rem;
-    font-size: 16px;
+    font-size: 20px;
+    color: gray;
+  
 }
 .profile-header-section .profile-header-right{
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
-    background-color: transparent;
+    justify-content: space-around;
 
+}
+#login-id{
+    margin-left: 1rem;
+    margin-top: .7rem;
+    font-size: 20px;
+    color: gray;
 }
 h6{
     background-color: transparent;
@@ -112,7 +121,7 @@ h6{
     background-color: transparent;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 90%;
     height: 100%;
 }
 .profile-details .basic-profile{
