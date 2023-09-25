@@ -19,11 +19,9 @@ const ProfileDashboard = ({ user, signout, alluser }) => {
   const [gallery, setGallery] = useState(false);
   const [todo, setTodo] = useState(false);
   const [activeButton, setActiveButton] = useState("profile");
-  console.log("singledata", user, profiledata);
   const [isOverlayOpen, setOverlayOpen] = useState(false);
   const [selectedUser, setSelectedUser] = useState(null);
   const [isChatboxOpen, setChatboxOpen] = useState(false);
-
   const handlePost = (e) => {
     e.preventDefault();
     setGallery(false);
@@ -89,7 +87,14 @@ const ProfileDashboard = ({ user, signout, alluser }) => {
         />
         <div className="overlay-name">{user[0].name}</div>
         <div className="overlay-email">{user[0].username}</div>
-
+        <div className="other-users-list">
+          
+          {alluser.map((auser)=>(<div className="over-container">
+                           <img  className="overlay-other-user-image" src={alluser.profilepicture} alt="over-image"/>
+            <div className="over-username">{auser.username}
+            </div>
+             </div>))}
+          </div>
         <button className="overlay-signout-button" onClick={handleSignout}>
           Signout
         </button>

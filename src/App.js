@@ -16,7 +16,11 @@ function App() {
     setUserdata([])
   }
   const handleUser=(users)=>{
-   setallUsers(users)
+    const all=users.map((user)=>({
+      profilepicture:user.profilepicture,
+      username:user.username
+    }))
+   setallUsers(all)
   }
   return (
     <div className="App">

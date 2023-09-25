@@ -170,23 +170,28 @@ h6{
     font-style: bold;
 
 }
-.overlay-other-user{
+.over-container{
     display: flex;
     flex-direction: row;
-    justify-content: center;
-    border-bottom: 1px grey;
-    overflow-y: hidden;
+    justify-content: space-between;
+    width: 100%;
+    height: 1rem;
 }
 .overlay-other-user-image{
     height: 30px;
     width: 30px;
     border-radius: 50%;
 }
-.overlay-other-user-username{
-    font-size: 16px;
+.over-username{
+    font-size: 10px;
     color: grey;
 }
-
+.other-users-list{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    overflow-y: scroll;
+}
 .chatbox-container {
     position: fixed;
     margin-bottom: 100px;
