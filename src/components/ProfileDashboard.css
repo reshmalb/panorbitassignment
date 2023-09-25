@@ -170,3 +170,29 @@ h6{
     font-style: bold;
 
 }
+.chatbox-container {
+    position: fixed;
+    margin-bottom: 100px;
+    right: 20px;
+    width: 300px;
+    z-index: 8;
+    background-color: transparent;
+    border: none;
+
+    transition: transform 0.3s ease-in-out;
+    transform: translateY(100%); 
+ 
+ 
+
+    /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2); */
+  }
+  .chatbox-header-image{
+    height:3rem;
+    width: 100%;
+    background-color: lightblue;
+  }
+  
+  
+  .chatbox-container.open {
+    transform: translateY(0); 
+  }

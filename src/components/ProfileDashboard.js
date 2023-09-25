@@ -6,9 +6,13 @@ import Gallery from './Gallery'
 import ToDO from './ToDO'
 
 import Overlay from "./Overlay";
+import Chatbox from './Chatbox';
+import Chat from './Chat';
+import DummyUserData from "./DummyData";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faComment } from '@fortawesome/free-solid-svg-icons';
 
-
-const ProfileDashboard = ({user,signout}) => {
+const ProfileDashboard = ({user,signout,alluser}) => {
 
   const[profile,setProfile]=useState(true);
   const [profiledata,setProfileData]=useState(user||[])
@@ -18,6 +22,9 @@ const ProfileDashboard = ({user,signout}) => {
   const [activeButton, setActiveButton] = useState('profile'); 
   console.log("singledata",user,profiledata)
   const [isOverlayOpen, setOverlayOpen] = useState(false);
+  const [selectedUser, setSelectedUser] = useState(null);
+  const [isChatboxOpen, setChatboxOpen] = useState(false);
+
    
   const handlePost=(e)=>{
     e.preventDefault();
@@ -59,7 +66,22 @@ const ProfileDashboard = ({user,signout}) => {
   const handleSignout=()=>{
     signout(true);
   }
+  const handleUserSelect = (user) => {
+    setSelectedUser(user);
+    setChatboxOpen(true);
+  };
 
+  const handleCloseChat = (user) => {
+    setSelectedUser(null);
+    setChatboxOpen(false);
+  };
+
+  const toggleChatbox = () => {
+    setChatboxOpen(!isChatboxOpen);
+  };
+  const chatboxStyle = {
+    transform: isChatboxOpen ? 'translateY(10%)' : 'translateY(100%)',
+  };
 
   return (
    <div className="dashboard-container">
@@ -70,7 +92,23 @@ const ProfileDashboard = ({user,signout}) => {
                <button className="overlay-signout-button" onClick={handleSignout}>Signout</button>
 
             </Overlay>
-
+     <div className={`chatbox-container ${isChatboxOpen ? 'open' : ''}`}
+    
+        >
+        <div className="chatbox-header-image"  onClick={toggleChatbox} 
+         style={chatboxStyle}>
+          <FontAwesomeIcon icon={faComment} style={{ fontSize: '2rem' ,paddingLeft:"5px"}}/>
+          </div>
+        <Chatbox users={DummyUserData} onUserSelect={handleUserSelect}  onClick={toggleChatbox} 
+         style={chatboxStyle}/>
+        {selectedUser && (
+          <>
+          <div className="chatbox-header-image"><FontAwesomeIcon icon={faComment} style={{ fontSize: '2rem' }}/> 
+          {selectedUser.name}</div>
+          <Chat user={selectedUser} onClose={handleCloseChat} />
+          </>
+        )}
+      </div>
     <div className="profile-left-section">
     <div
         onClick={handleProfile}
@@ -134,6 +172,7 @@ const ProfileDashboard = ({user,signout}) => {
        
       
           </div>
+          {/* <Chatbox/> */}
       
     </div>
   );

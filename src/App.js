@@ -6,7 +6,7 @@ import { useState } from 'react';
 function App() {
   const [isuser,setuser]=useState(false);
   const [userdata,setUserdata]=useState([])
-
+  const [allusers,setallUsers]=useState([])
   const handleSelection=(user)=>{
     setUserdata(user)
     setuser(true);
@@ -15,10 +15,13 @@ function App() {
     setuser(false)
     setUserdata([])
   }
+  const handleUser=(users)=>{
+   setallUsers(users)
+  }
   return (
     <div className="App">
-     {!isuser &&(<Users onselect={handleSelection}/>)}
-     {isuser &&( <ProfileDashboard user={userdata} signout={handlesignout}/>)}  
+     {!isuser &&(<Users onselect={handleSelection} userDetails={handleUser}/>)}
+     {isuser &&( <ProfileDashboard user={userdata} signout={handlesignout} alluser={allusers}/>)}  
     </div>
   );
 }

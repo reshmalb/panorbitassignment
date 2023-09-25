@@ -14,7 +14,7 @@ const fetchUsers=  async()=>{
 
 }
 
-const Users = ({onselect}) => {
+const Users = ({onselect,userDetails}) => {
   const[userlist,setUserList]=useState([]);
   const [singleUser,setSingleUser]=useState([])
 
@@ -25,6 +25,7 @@ useEffect(()=>{
     try {
       const usersData = await fetchUsers();
       setUserList(usersData.users || []);
+      userDetails(usersData.users)
     } catch (error) {
       console.error(error.message);
     }
@@ -37,7 +38,6 @@ useEffect(()=>{
 const handleUserSelecttion=(id)=>{
 
   const userdata= userlist.filter((item)=>item.id===id)
-  console.group("userdat",userdata)
   setSingleUser(userdata||[]);
   onselect(userdata||[])
 

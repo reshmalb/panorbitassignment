@@ -1,7 +1,10 @@
 import React from 'react'
 import './Profile.css'
+import Map from './Map'
 
 const Profile = ({user}) => {
+  const latitude = user ? parseFloat(user[0].address.geo.lat) : 0;
+  const longitude = user ? parseFloat(user[0].address.geo.lng) : 0;
 
   return (
     <div className='individual-profile-details'>
@@ -56,6 +59,7 @@ const Profile = ({user}) => {
             </div>
          </div>
          <div className='profile-map'>
+         <Map lat={latitude} lng={longitude} />
 
          </div>
 
