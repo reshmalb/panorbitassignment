@@ -76,6 +76,7 @@ const ProfileDashboard = ({ user, signout, alluser }) => {
 
   return (
     <div className="dashboard-container">
+      {/* Displaying Modal */}
       <Overlay
         isOpen={isOverlayOpen}
         onClose={() => setOverlayOpen(!isOverlayOpen)}
@@ -87,8 +88,7 @@ const ProfileDashboard = ({ user, signout, alluser }) => {
         />
         <div className="overlay-name">{user[0].name}</div>
         <div className="overlay-email">{user[0].username}</div>
-        <div className="other-users-list">
-          
+        <div className="other-users-list">          
           {alluser.map((auser)=>(<div className="over-container">
                            <img  className="overlay-other-user-image" src={alluser.profilepicture} alt="over-image"/>
             <div className="over-username">{auser.username}
@@ -99,6 +99,8 @@ const ProfileDashboard = ({ user, signout, alluser }) => {
           Signout
         </button>
       </Overlay>
+
+      {/* Displaying chatbox */}
       <div className={`chatbox-container ${isChatboxOpen ? "open" : ""}`}>
         <div
           className="chatbox-header-image"
@@ -122,10 +124,12 @@ const ProfileDashboard = ({ user, signout, alluser }) => {
               <FontAwesomeIcon icon={faComment} style={{ fontSize: "2rem" }} />
               {selectedUser.name}
             </div>
+            {/* Displaying individual chatbox */}
             <Chat user={selectedUser} onClose={handleCloseChat} />
           </>
         )}
       </div>
+      {/* Display list of pages ,Posts,todo,profilr,Gallery */}
       <div className="profile-left-section">
         <div
           onClick={handleProfile}
@@ -157,7 +161,7 @@ const ProfileDashboard = ({ user, signout, alluser }) => {
           To Do
         </div>
       </div>
-
+    {/* Displaying detailed profile with Company address and location */}
       <div className="profile-right-section">
         <div className="profile-header-section">
           <div className="profile-header-left">
@@ -186,7 +190,7 @@ const ProfileDashboard = ({ user, signout, alluser }) => {
           {gallery && <Gallery />}
         </div>
       </div>
-      {/* <Chatbox/> */}
+  
     </div>
   );
 };

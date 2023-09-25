@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import './Users.css'
 import axios from 'axios'
-
+// Fetching data from API
 const fetchUsers=  async()=>{
   try{
     const response=  await  axios.get('https://panorbit.in/api/users.json')
@@ -15,6 +15,7 @@ const fetchUsers=  async()=>{
 }
 
 const Users = ({onselect,userDetails}) => {
+  
   const[userlist,setUserList]=useState([]);
   const [singleUser,setSingleUser]=useState([])
 

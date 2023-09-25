@@ -24,7 +24,9 @@ function App() {
   }
   return (
     <div className="App">
+      {/* Rendering the landingpage */}
      {!isuser &&(<Users onselect={handleSelection} userDetails={handleUser}/>)}
+     {/* Rendering the homepage */}
      {isuser &&( <ProfileDashboard user={userdata} signout={handlesignout} alluser={allusers}/>)}  
     </div>
   );

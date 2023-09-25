@@ -1,4 +1,4 @@
-
+/* main-container starts */
 .dashboard-container{
     background-color: transparent;
     height: 100vh;
@@ -8,6 +8,7 @@
     flex-direction: row;
     justify-content: space-between;
 }
+/* Left section starts */
 .dashboard-container .profile-left-section{
     background-color: rgb(0, 132, 255);
     margin-top: 4rem;
@@ -20,17 +21,6 @@
     padding-top: 100px;
     position: relative;
 }
-.dashboard-container .profile-right-section{
-    background-color: transparent;
-    height: 100%;
-    width: 70%;
-    margin-right: 3rem;
-    margin-top: 1rem;
-    display: flex;
-    flex-direction: column;
-
-}
-
 
 .profile-left-section .buttonlist{
     background-color: transparent;
@@ -58,7 +48,6 @@
     opacity: .3;
 }
 .buttonlist.active {
-    /* background-color: rgb(210, 210, 224);  */
     color: white; 
     display: flex;
   }
@@ -71,9 +60,20 @@
     justify-content: space-between;
     background-color: transparent;
 }
+/* left section ends here */
 
 
+/* right section starts */
+.dashboard-container .profile-right-section{
+    background-color: transparent;
+    height: 100%;
+    width: 70%;
+    margin-right: 3rem;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
 
+}
  .profile-header-section{
     height: 75px;
     width:80%;
@@ -136,6 +136,11 @@ h6{
   width: 100%;
   background-color: rgb(139, 136, 136); 
 }
+
+
+/* right section ends here  */
+
+/* Overlay starts here  */
 .overlay-image{
     height: 80px;
     width: 80px;
@@ -192,6 +197,12 @@ h6{
     width: 100%;
     overflow-y: scroll;
 }
+
+
+/* overlay ends here  */
+
+/* chatbox starts here  */
+
 .chatbox-container {
     position: fixed;
     margin-bottom: 100px;
@@ -218,3 +229,5 @@ h6{
   .chatbox-container.open {
     transform: translateY(0); 
   }
+
+  /* chatbox ends here  */
