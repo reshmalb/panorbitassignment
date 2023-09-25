@@ -1,7 +1,7 @@
 import React,{useState,useEffect} from 'react'
 import './Users.css'
 import axios from 'axios'
-import ProfileDashboard from './ProfileDashboard'
+
 const fetchUsers=  async()=>{
   try{
     const response=  await  axios.get('https://panorbit.in/api/users.json')
@@ -25,7 +25,7 @@ useEffect(()=>{
     try {
       const usersData = await fetchUsers();
       setUserList(usersData.users || []);
-      userDetails(usersData.users)
+      userDetails(usersData)
     } catch (error) {
       console.error(error.message);
     }

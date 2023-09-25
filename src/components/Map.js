@@ -2,10 +2,11 @@ import React, { useEffect, useState } from 'react';
 
 function Map({ lat, lng }) {
   const [map, setMap] = useState(null);
+  const apiKey = process.env.REACT_APP_API_KEY;
 
   useEffect(() => {
     const script = document.createElement('script');
-    script.src = `https://maps.googleapis.com/maps/api/js?key=AIzaSyAleC25tfs_zOanQYIDWPJpFeAEfbxWt8I&callback=initMap`;
+    script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&callback=initMap`;
     script.async = true;
     script.defer = true;
     document.head.appendChild(script);
